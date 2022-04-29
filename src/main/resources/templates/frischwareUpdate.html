@@ -1,0 +1,13 @@
+<h2>Frischware bearbeiten</h2>
+<hr>
+<form th:action="@{/updatefrischware(id=${frischwareid})}">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" th:value="${frischware.getInhalt()}" th:name="inhalt" >
+        <input type="text" class="form-control" th:value="${frischware.getGewicht()}" th:name="gewicht" >
+        <input type="text" class="form-control" th:value="${frischware.getHaltbarkeit()}" th:name="haltbarkeit" >
+        <input type="number" class="form-control" th:value="${frischwareid}" th:name="frischwareId" style="display: none;" >
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit" id="button-addon2">Aktualisieren</button>
+        </div>
+    </div>
+</form>

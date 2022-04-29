@@ -1,0 +1,12 @@
+<h2>Normalgut bearbeiten</h2>
+<hr>
+<form th:action="@{/updatenormalgut(id=${normalgutid})}">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" th:value="${normalgut.getInhalt()}" th:name="inhalt" >
+        <input type="text" class="form-control" th:value="${normalgut.getGewicht()}" th:name="gewicht" >
+        <input type="number" class="form-control" th:value="${normalgutid}" th:name="normalgutId" style="display: none;" >
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit" id="button-addon2">Aktualisieren</button>
+        </div>
+    </div>
+</form>

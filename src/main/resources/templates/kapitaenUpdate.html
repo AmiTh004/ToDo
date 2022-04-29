@@ -1,0 +1,14 @@
+<h2>kapitaen bearbeiten</h2>
+<hr>
+<form th:action="@{/updatekapitaen(id=${kapitaenid})}">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" th:value="${kapitaen.getVorname()}" th:name="vorname" >
+        <input type="text" class="form-control" th:value="${kapitaen.getNachname()}" th:name="nachname" >
+        <input type="text" class="form-control" th:value="${kapitaen.getPersonalnummer()}" th:name="personalnummer" >
+        <input type="text" class="form-control" th:value="${kapitaen.getGefahreneFahrten()}" th:name="gefahreneFahrten" >
+        <input type="number" class="form-control" th:value="${kapitaenid}" th:name="kapitaenId" style="display: none;" >
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit" id="button-addon2">Aktualisieren</button>
+        </div>
+    </div>
+</form>

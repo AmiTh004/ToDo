@@ -1,0 +1,21 @@
+<h2>Route bearbeiten</h2>
+<hr>
+<form th:action="@{/updateroute(id=${routeid})}">
+    <div class="input-group mb-3">
+        <select class="custom-select" th:name="routeStart" id="inputGroupSelect01">
+            <span th:each="stadt: ${staedte}">
+                <option th:if="${route.getStart() == stadt}" th:value="${stadt}" selected="selected"></option>
+                <option th:unless="${route.getStart() == stadt}"  th:value="${stadt}" th:text="${stadt}"></option>
+            </span>
+        </select>
+
+
+        <input type="text" class="form-control" th:value="${route.getZiel()}" th:name="ziel" >
+        <input type="text" class="form-control" th:value="${route.getZeitDays()}" th:name="zeitDays" >
+        <input type="text" class="form-control" th:value="${route.getKilometer()}" th:name="kilometer" >
+        <input type="number" class="form-control" th:value="${routeid}" th:name="routeId" style="display: none;" >
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit" id="button-addon2">Aktualisieren</button>
+        </div>
+    </div>
+</form>
